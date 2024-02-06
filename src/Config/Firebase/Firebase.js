@@ -18,13 +18,13 @@ import {
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC5Rxj4n-m9wZ5KNmkNKQmdFhGtCKeIVd8",
-  authDomain: "mini-hackathon-80115.firebaseapp.com",
-  projectId: "mini-hackathon-80115",
-  storageBucket: "mini-hackathon-80115.appspot.com",
-  messagingSenderId: "1099121272558",
-  appId: "1:1099121272558:web:ae777ecae6f528855b35ff",
-  measurementId: "G-3JR8XRSXMV",
+  apiKey: "key",
+  authDomain: "key",
+  projectId: "key",
+  storageBucket: "key",
+  messagingSenderId: "key",
+  appId: "key",
+  measurementId: "key",
 };
 
 // Initialize Firebase
