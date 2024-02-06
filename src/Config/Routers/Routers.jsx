@@ -12,11 +12,13 @@ import { auth, db } from "../Firebase/Firebase";
 import Error from "../../Components/Layouts/Error";
 
 const Routers = () => {
+  const [userIN, setUserIN] = useState();
   const [checkType, setCheckType] = useState("");
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
+        setUserIN(user);
         const q = query(collection(db, "users"), where("id", "==", user.uid));
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
@@ -31,10 +33,13 @@ const Routers = () => {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar userIN={userIN} setUserIN={setUserIN} />
       <Routes>
         {checkType === "admin" ? (
-          <Route path="/admin" element={<ProtectedRoute component={<Home />} />} />
+          <Route
+            path="/admin"
+            element={<ProtectedRoute component={<Home />} />}
+          />
         ) : (
           <Route
             path="/student"
